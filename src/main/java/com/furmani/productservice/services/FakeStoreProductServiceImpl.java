@@ -2,6 +2,7 @@ package com.furmani.productservice.services;
 
 import com.furmani.productservice.dtos.FakeStoreProductDto;
 import com.furmani.productservice.dtos.ProductRequestDto;
+import com.furmani.productservice.exceptions.ProductNotFoundException;
 import com.furmani.productservice.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,8 +31,11 @@ public class FakeStoreProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProductById(String id) {
+    public Product getProductById(String id) throws ProductNotFoundException {
         FakeStoreProductDto dto = restTemplate.getForObject ("https://fakestoreapi.com/products/" + id, FakeStoreProductDto.class);
+        if (dto == null) {
+            throw new ProductNotFoundException("Product with id " + id + " not found");
+        }
         return dto.toProduct();
     }
 
