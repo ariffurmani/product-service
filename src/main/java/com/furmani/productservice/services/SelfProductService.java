@@ -25,7 +25,7 @@ public class SelfProductService implements ProductService {
 
     @Override
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        return productRepository.findAllByIsDeletedFalse();
     }
 
     @Override
@@ -81,11 +81,11 @@ public class SelfProductService implements ProductService {
     }
 
     @Override
-    public void deleteProduct(String name) throws ProductNotFoundException {
-        if (name == null) {
-            throw new ProductNotFoundException("The Product to be deleted must have a valid name");
+    public void deleteProduct(Long id) throws ProductNotFoundException {
+        if (id == null) {
+            throw new ProductNotFoundException("The Product to be deleted must have a valid id");
         }
-        Optional<Product> productDb = productRepository.findByName(name);
+        Optional<Product> productDb = productRepository.findByIdAndIsDeletedFalse(id);
         if (productDb.isEmpty()) {
             throw new ProductNotFoundException("Product not found");
         }

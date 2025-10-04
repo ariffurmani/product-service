@@ -13,5 +13,5 @@ public interface ProductService {
     Product getProductById(Long id) throws ProductNotFoundException;
     Product create(ProductRequestDto  productRequestDto) throws InvalidProductData;
     Product update(Long id, ProductRequestDto productRequestDto) throws ProductNotFoundException, InvalidProductData;
-    void deleteProduct(String name) throws ProductNotFoundException;
+    void deleteProduct(Long id) throws ProductNotFoundException;
 }

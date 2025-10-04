@@ -1,12 +1,10 @@
 package com.furmani.productservice.controllers;
 
-import com.furmani.productservice.dtos.FakeStoreProductDto;
 import com.furmani.productservice.dtos.ProductRequestDto;
 import com.furmani.productservice.exceptions.InvalidProductData;
 import com.furmani.productservice.exceptions.ProductNotFoundException;
 import com.furmani.productservice.models.Product;
 import com.furmani.productservice.services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -45,8 +43,7 @@ public class ProductController {
 
     @DeleteMapping("products/{id}")
     public ResponseEntity<String> deleteProduct(@PathVariable("id") Long id) throws ProductNotFoundException {
-        Product product = productService.getProductById(id);
-        productService.deleteProduct(product.getName());
+        productService.deleteProduct(id);
         return new ResponseEntity<>("Product deleted successfully", HttpStatus.OK);
     }
 }
