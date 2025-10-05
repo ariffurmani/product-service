@@ -1,5 +1,6 @@
 package com.furmani.productservice.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -15,5 +16,6 @@ public class Category extends BaseModel {
     private String name;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE)
+    @JsonManagedReference
     private List<Product>  products;
 }

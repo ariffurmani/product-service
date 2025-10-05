@@ -1,5 +1,6 @@
 package com.furmani.productservice.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -15,6 +16,7 @@ public class Product extends BaseModel{
     private Double price;
     private String description;
     @ManyToOne(cascade = CascadeType.ALL)
+    @JsonBackReference
     private Category category;
     private String imageUrl;
 }
