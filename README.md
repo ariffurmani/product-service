@@ -190,18 +190,14 @@ All responses are in **JSON** format with the following structure:
 **Success Response (2xx):**
 ```json
 {
-  "id": 1,
-  "name": "Product Name",
-  "price": 99.99,
-  "description": "Product description",
-  "category": {
-    "id": 1,
-    "name": "electronics"
-  },
-  "imageUrl": "https://example.com/image.jpg",
-  "isDeleted": false,
-  "createdAt": "2026-05-05T10:00:00.000Z",
-  "lastUpdatedAt": "2026-05-05T10:00:00.000Z"
+  "id": 2,
+  "createdAt": "2026-05-05T07:13:34.405+00:00",
+  "lastUpdatedAt": "2026-05-05T07:13:34.405+00:00",
+  "name": "Running Shoes X",
+  "price": 89.5,
+  "description": "Lightweight running shoes",
+  "imageUrl": "https://example.com/images/shoesx.jpg",
+  "deleted": false
 }
 ```
 
@@ -231,18 +227,14 @@ Content-Type: application/json
 ```json
 [
   {
-    "id": 1,
-    "name": "iPhone 15",
-    "price": 1099.99,
-    "description": "Apple smartphone",
-    "category": {
-      "id": 1,
-      "name": "electronics"
-    },
-    "imageUrl": "https://example.com/images/iphone15.jpg",
-    "isDeleted": false,
-    "createdAt": "2026-05-05T10:30:00.000Z",
-    "lastUpdatedAt": "2026-05-05T10:30:00.000Z"
+    "id": 2,
+    "createdAt": "2026-05-05T07:13:34.405+00:00",
+    "lastUpdatedAt": "2026-05-05T07:13:34.405+00:00",
+    "name": "Running Shoes X",
+    "price": 89.5,
+    "description": "Lightweight running shoes",
+    "imageUrl": "https://example.com/images/shoesx.jpg",
+    "deleted": false
   }
 ]
 ```
@@ -274,18 +266,14 @@ Content-Type: application/json
 
 ```json
 {
-  "id": 1,
-  "name": "iPhone 15",
-  "price": 1099.99,
-  "description": "Apple smartphone",
-  "category": {
-    "id": 1,
-    "name": "electronics"
-  },
-  "imageUrl": "https://example.com/images/iphone15.jpg",
-  "isDeleted": false,
-  "createdAt": "2026-05-05T10:30:00.000Z",
-  "lastUpdatedAt": "2026-05-05T10:30:00.000Z"
+  "id": 2,
+  "createdAt": "2026-05-05T07:13:34.405+00:00",
+  "lastUpdatedAt": "2026-05-05T07:13:34.405+00:00",
+  "name": "Running Shoes X",
+  "price": 89.5,
+  "description": "Lightweight running shoes",
+  "imageUrl": "https://example.com/images/shoesx.jpg",
+  "deleted": false
 }
 ```
 
@@ -340,18 +328,14 @@ Content-Type: application/json
 
 ```json
 {
-  "id": 1,
-  "name": "iPhone 15",
-  "price": 1099.99,
-  "description": "Apple smartphone",
-  "category": {
-    "id": 1,
-    "name": "electronics"
-  },
-  "imageUrl": "https://example.com/images/iphone15.jpg",
-  "isDeleted": false,
-  "createdAt": "2026-05-05T10:30:00.000Z",
-  "lastUpdatedAt": "2026-05-05T10:30:00.000Z"
+  "id": 2,
+  "createdAt": "2026-05-05T07:13:34.405+00:00",
+  "lastUpdatedAt": "2026-05-05T07:13:34.405+00:00",
+  "name": "Running Shoes X",
+  "price": 89.5,
+  "description": "Lightweight running shoes",
+  "imageUrl": "https://example.com/images/shoesx.jpg",
+  "deleted": false
 }
 ```
 
@@ -409,18 +393,14 @@ Content-Type: application/json
 
 ```json
 {
-  "id": 1,
-  "name": "iPhone 15 Pro",
-  "price": 1299.99,
-  "description": "Apple smartphone Pro model",
-  "category": {
-    "id": 1,
-    "name": "electronics"
-  },
-  "imageUrl": "https://example.com/images/iphone15pro.jpg",
-  "isDeleted": false,
-  "createdAt": "2026-05-05T10:30:00.000Z",
-  "lastUpdatedAt": "2026-05-05T11:00:00.000Z"
+  "id": 2,
+  "createdAt": "2026-05-05T07:13:34.405+00:00",
+  "lastUpdatedAt": "2026-05-05T07:13:34.405+00:00",
+  "name": "Running Shoes X",
+  "price": 89.5,
+  "description": "Lightweight running shoes",
+  "imageUrl": "https://example.com/images/shoesx.jpg",
+  "deleted": false
 }
 ```
 
@@ -520,18 +500,14 @@ Content-Type: application/json
 ```json
 [
   {
-    "id": 1,
-    "name": "iPhone 15",
-    "price": 1099.99,
-    "description": "Apple smartphone",
-    "category": {
-      "id": 1,
-      "name": "electronics"
-    },
-    "imageUrl": "https://example.com/images/iphone15.jpg",
-    "isDeleted": false,
-    "createdAt": "2026-05-05T10:30:00.000Z",
-    "lastUpdatedAt": "2026-05-05T10:30:00.000Z"
+    "id": 2,
+    "createdAt": "2026-05-05T07:13:34.405+00:00",
+    "lastUpdatedAt": "2026-05-05T07:13:34.405+00:00",
+    "name": "Running Shoes X",
+    "price": 89.5,
+    "description": "Lightweight running shoes",
+    "imageUrl": "https://example.com/images/shoesx.jpg",
+    "deleted": false
   }
 ]
 ```
@@ -582,17 +558,13 @@ Used for creating and updating products.
 ```json
 {
   "id": "number",
+  "createdAt": "ISO 8601 timestamp",
+  "lastUpdatedAt": "ISO 8601 timestamp",
   "name": "string",
   "price": "number",
   "description": "string",
-  "category": {
-    "id": "number",
-    "name": "string"
-  },
   "imageUrl": "string",
-  "isDeleted": "boolean",
-  "createdAt": "ISO 8601 timestamp",
-  "lastUpdatedAt": "ISO 8601 timestamp"
+  "deleted": "boolean"
 }
 ```
 

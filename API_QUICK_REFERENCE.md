@@ -94,18 +94,14 @@ curl -X POST http://localhost:8080/products \
 **Response (201 Created):**
 ```json
 {
-  "id": 1,
-  "name": "iPhone 15",
-  "price": 1099.99,
-  "description": "Apple smartphone",
-  "category": {
-    "id": 1,
-    "name": "electronics"
-  },
+  "id": 2,
+  "createdAt": "2026-05-05T07:13:34.405+00:00",
+  "lastUpdatedAt": "2026-05-05T07:13:34.405+00:00",
+  "name": "Running Shoes X",
+  "price": 89.5,
+  "description": "Lightweight running shoes",
   "imageUrl": "https://example.com/iphone15.jpg",
-  "isDeleted": false,
-  "createdAt": "2026-05-05T10:30:00.000Z",
-  "lastUpdatedAt": "2026-05-05T10:30:00.000Z"
+  "deleted": false
 }
 ```
 
@@ -122,18 +118,14 @@ curl -X GET http://localhost:8080/products \
 ```json
 [
   {
-    "id": 1,
-    "name": "iPhone 15",
-    "price": 1099.99,
-    "description": "Apple smartphone",
-    "category": {
-      "id": 1,
-      "name": "electronics"
-    },
+    "id": 2,
+    "createdAt": "2026-05-05T07:13:34.405+00:00",
+    "lastUpdatedAt": "2026-05-05T07:13:34.405+00:00",
+    "name": "Running Shoes X",
+    "price": 89.5,
+    "description": "Lightweight running shoes",
     "imageUrl": "https://example.com/iphone15.jpg",
-    "isDeleted": false,
-    "createdAt": "2026-05-05T10:30:00.000Z",
-    "lastUpdatedAt": "2026-05-05T10:30:00.000Z"
+    "deleted": false
   }
 ]
 ```
