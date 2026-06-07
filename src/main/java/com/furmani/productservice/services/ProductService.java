@@ -16,4 +16,6 @@ public interface ProductService {
     Product update(Long id, ProductRequestDto productRequestDto) throws ProductNotFoundException, InvalidProductData;
     void deleteProduct(Long id) throws ProductNotFoundException, InvalidProductData;
     List<Product> getProductsByCategory(String category) throws CategoryNotFoundException, InvalidProductData;
+    Product incrementStock(Long id, long quantity) throws ProductNotFoundException, InvalidProductData;
+    Product decrementStock(Long id, long quantity) throws ProductNotFoundException, InvalidProductData;
 }

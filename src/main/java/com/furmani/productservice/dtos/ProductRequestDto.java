@@ -11,4 +11,5 @@ public class ProductRequestDto {
     private String description;
     private String category;
     private String imageUrl;
+    private long stockQuantity = 0;
 }
