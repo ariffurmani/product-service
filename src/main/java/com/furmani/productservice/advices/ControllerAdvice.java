@@ -2,8 +2,11 @@ package com.furmani.productservice.advices;
 
 import com.furmani.productservice.dtos.ProductNotFoundDto;
 import com.furmani.productservice.exceptions.CategoryNotFoundException;
+import com.furmani.productservice.exceptions.ForbiddenAccessException;
 import com.furmani.productservice.exceptions.InvalidProductData;
+import com.furmani.productservice.exceptions.InvalidTokenException;
 import com.furmani.productservice.exceptions.ProductNotFoundException;
+import com.furmani.productservice.exceptions.UnauthorizedAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -30,6 +33,24 @@ public class ControllerAdvice {
     public ResponseEntity<ProductNotFoundDto> handleInvalidProductData(InvalidProductData ex) {
         log.warn("Invalid product data: {}", ex.getMessage());
         return buildResponse(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(InvalidTokenException.class)
+    public ResponseEntity<ProductNotFoundDto> handleInvalidTokenException(InvalidTokenException ex) {
+        log.warn("Invalid token: {}", ex.getMessage());
+        return buildResponse(ex.getMessage(), HttpStatus.UNAUTHORIZED);
+    }
+
+    @ExceptionHandler(UnauthorizedAccessException.class)
+    public ResponseEntity<ProductNotFoundDto> handleUnauthorizedAccessException(UnauthorizedAccessException ex) {
+        log.warn("Unauthorized access: {}", ex.getMessage());
+        return buildResponse(ex.getMessage(), HttpStatus.UNAUTHORIZED);
+    }
+
+    @ExceptionHandler(ForbiddenAccessException.class)
+    public ResponseEntity<ProductNotFoundDto> handleForbiddenAccessException(ForbiddenAccessException ex) {
+        log.warn("Forbidden access: {}", ex.getMessage());
+        return buildResponse(ex.getMessage(), HttpStatus.FORBIDDEN);
     }
 
     private ResponseEntity<ProductNotFoundDto> buildResponse(String message, HttpStatus status) {
